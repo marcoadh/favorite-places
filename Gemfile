@@ -63,4 +63,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "hirb"
 gem "awesome_print", "~> 1.9"
+gem "htmlbeautifier"
 gem "dotenv-rails", "~> 2.8"
+
+gem "jquery-rails", "~> 4.6"

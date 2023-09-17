@@ -10,6 +10,24 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+ *= require vendor
  *= require_self
  */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#panel {
+  height: 100vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.map {
+  z-index: 0;
+  outline: 0;
+  overflow: hidden;
+}
