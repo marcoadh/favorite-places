@@ -68,3 +68,4 @@ gem "dotenv-rails", "~> 2.8"
 
 gem "jquery-rails", "~> 4.6"
 gem "terser", "~> 1.1"
+gem "devise", "~> 4.9"
