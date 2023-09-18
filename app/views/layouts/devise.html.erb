@@ -5,9 +5,14 @@
     <title>Iniciar Sesión</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "login", "data-turbo-track": "reload" %>
   </head>
 
   <body>
-    <%= yield %>
+    <main class="login-card">
+      <%= render "shared/flash_message" %>
+      <%= yield %>
+    </main>
   </body>
 </html>
