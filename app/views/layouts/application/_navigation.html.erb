@@ -1,0 +1,36 @@
+<div id="navegacion">
+  <div class="menu">
+    <ul>
+      <li class="active">
+        <a href="#inicio">
+          <i class="bi bi-house"></i>
+          <span>Inicio</span>
+        </a>
+      </li>
+      <li>
+        <a href="#sobremi">
+          <i class="bi bi-person"></i>
+          <span>Sobre mí</span>
+        </a>
+      </li>
+      <li>
+        <a href="#portafolio">
+          <i class="bi bi-journal-code"></i>
+          <span>Proyectos</span>
+        </a>
+      </li>
+      <% if current_user %>
+        <li class="lista">
+          <%= link_to destroy_user_session_path, class: "text-danger", data: { method: :delete } do %>
+            <i class="fas fa-power-off text-danger"></i>
+            Cerrar Sesión
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <button type="button" class="mobile-nav-toggle">
+    <i class="fa fa-bars"></i>
+  </button>
+</div>

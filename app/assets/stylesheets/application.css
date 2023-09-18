@@ -10,6 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require font_awesome5_webfont
  *= require vendor
  *= require_self
  */
@@ -18,16 +19,166 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* ========== ESTILOS GENERALES ========== */
+.alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  margin-bottom: 40px;
+}
+
+.text-danger {
+  color: #dc3545 !important;
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+/* ========== NAVEGACIÓN ========== */
+#navegacion {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  transition: all ease-in-out 0.5s;
+  z-index: 9990;
+  padding: 0 15px;
+  background: #222;
+  display: flex;
+  align-items: center;
+}
+
+.nav-active {
+  left: 0 !important;
+}
+
+/* Navegación - Menú */
+.menu {
+  padding-top: 30px;
+}
+
+.menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+.menu a {
+  display: flex;
+  align-items: center;
+  color: #6f7180;
+  font-size: 18px;
+  padding: 10px 15px;
+  margin-bottom: 18px;
+  transition: 0.5s;
+  font-weight: bold;
+}
+
+.menu a i {
+  font-size: 22px;
+  padding-right: 8px;
+  color: #6f7180;
+}
+
+.menu a:hover,
+.menu .active>a,
+.menu li:hover>a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.menu a:hover i,
+.menu .active>a i {
+  color: #159edd;
+}
+
+
+/* Navegación Mobile */
+.mobile-nav-toggle {
+  position: fixed;
+  bottom: 3vh;
+  right: 1vh;
+  border: 0;
+  z-index: 9991;
+  transition: all 0.5s;
+  line-height: 1;
+  text-align: right;
+  background: #333;
+  height: 4rem;
+  width: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.mobile-nav-toggle i {
+  color: #fff;
+  font-size: 30px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1199px) {
+  #navegacion {
+    left: -300px;
+  }
+}
+
+/* Media Queries */
+@media screen and (max-width: 480px) {
+  .menu a {
+    font-size: 1rem;
+  }
+}
+
+/* ========== PANEL PANTALLA PRINCIPAL ========== */
 #panel {
   height: 100vh;
   overflow-y: auto;
   position: relative;
+  display: block;
+}
+
+#panel .leaflet-top {
+  top: 50px;
 }
 
 .map {
   z-index: 0;
   outline: 0;
   overflow: hidden;
+}
+
+.panel-options {
+  position: absolute;
+  z-index: 1000;
+  top: 10px;
+  right: 10px;
+}
+
+.panel-options-icon {
+  margin: 3px;
+  width: 35px;
+  height: 35px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #737475;
 }
