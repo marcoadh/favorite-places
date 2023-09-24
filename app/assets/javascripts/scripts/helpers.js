@@ -8,7 +8,6 @@
     let streemapr = L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", { attribution: attribution, maxZoom: 20 })
     let map, layers, geocoder
 
-
     layers = {
       "Google Calles": gmapsr,
       "Google Satelite": gmapss,

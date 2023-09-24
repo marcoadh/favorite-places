@@ -1,12 +1,18 @@
 <div id="panel" data-controller="panel">
   <div class="map" data-panel-target="map" style="height: 100%;"></div>
 
-  <div class="panel-options">
-    <button class="panel-options-icon" title="Mis puntos de interés">
+  <div class="panel-top-right-options">
+    <button type="button" class="panel-top-right-options-icon" title="Mis puntos de interés">
       <i class="fas fa-user"></i>
     </button>
-    <button class="panel-options-icon" title="Registrar punto de interés">
+    <button type="button" class="panel-top-right-options-icon" title="Registrar punto de interés">
       <i class="fas fa-map-marked-alt"></i>
+    </button>
+  </div>
+
+  <div class="panel-bottom-right-options">
+    <button type="button" class="panel-top-right-options-icon" title="Mostrar ubicación actual" data-action="panel#getLocation panel#focusLastPositionMarker" data-marker-focus="true">
+      <i class="fas fa-location-arrow"></i>
     </button>
   </div>
 </div>
