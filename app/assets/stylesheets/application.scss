@@ -23,6 +23,10 @@
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+body {
+  height: 100%;
+}
+
 /* ========== ESTILOS GENERALES ========== */
 .alert {
   position: relative;
@@ -47,6 +51,65 @@
   color: #721c24;
   background-color: #f8d7da;
   border-color: #f5c6cb;
+}
+
+/* ========== PANEL PANTALLA PRINCIPAL ========== */
+#panel {
+  height: 100vh;
+  position: relative;
+  /* overflow-y: auto; */
+  /* display: block; */
+}
+
+#panel .leaflet-top {
+  top: 50px;
+}
+
+.map {
+  z-index: 0;
+  outline: 0;
+  overflow: hidden;
+}
+
+.panel-top-right-options {
+  position: absolute;
+  z-index: 1000;
+  top: 1vh;
+  right: 1vh;
+}
+
+.panel-top-right-options .panel-top-right-options-icon {
+  margin: 3px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: #737475;
+}
+
+.panel-bottom-right-options {
+  position: absolute;
+  z-index: 1000;
+  bottom: 3vh;
+  right: 1vh;
+}
+
+.panel-bottom-right-options .panel-top-right-options-icon {
+  width: 4rem;
+  height: 4rem;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  border-radius: 50%;
+  border: transparent;
+  background: #159edd;
+  transition: all 0.5s;
+  /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
 }
 
 /* ========== NAVEGACIÓN ========== */
@@ -146,63 +209,4 @@
   .menu a {
     font-size: 1rem;
   }
-}
-
-/* ========== PANEL PANTALLA PRINCIPAL ========== */
-#panel {
-  height: 100vh;
-  overflow-y: auto;
-  position: relative;
-  display: block;
-}
-
-#panel .leaflet-top {
-  top: 50px;
-}
-
-.map {
-  z-index: 0;
-  outline: 0;
-  overflow: hidden;
-}
-
-.panel-top-right-options {
-  position: absolute;
-  z-index: 1000;
-  top: 10px;
-  right: 10px;
-}
-
-.panel-top-right-options .panel-top-right-options-icon {
-  margin: 3px;
-  width: 40px;
-  height: 40px;
-  border: none;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 50%;
-  background-color: #737475;
-}
-
-.panel-bottom-right-options {
-  position: absolute;
-  z-index: 1000;
-  bottom: 4vh;
-  right: 1vh;
-}
-
-.panel-bottom-right-options .panel-top-right-options-icon {
-  width: 4rem;
-  height: 4rem;
-  color: #fff;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.7rem;
-  border-radius: 50%;
-  border: transparent;
-  background: #159edd;
-  transition: all 0.5s;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }

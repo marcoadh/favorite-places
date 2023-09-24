@@ -3,5 +3,5 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "login-form" }) do |f| %>
   <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Correo Electrónico", class: "email control" %>
   <%= f.password_field :password, autocomplete: "current-password", placeholder: "Contraseña", class: "password control" %>
-  <%= f.submit "Cerrar Sesión", class: "btn-submit control" %>
+  <%= f.submit "Iniciar Sesión", class: "btn-submit control" %>
 <% end %>

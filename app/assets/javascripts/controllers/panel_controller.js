@@ -70,8 +70,7 @@
 
     initUserTrackingCron() {
       setInterval(async () => {
-        let state = await Utils.validGeolocationPermissions()
-        console.log(state);
+        await Utils.validGeolocationPermissions()
         if (!Utils.isUserLocationEnabled()) return
 
         this.getLocation()
