@@ -71,3 +71,4 @@ gem "terser", "~> 1.1"
 gem "devise", "~> 4.9"
 
 gem "font_awesome5_rails", "~> 1.5"
+gem 'bootstrap', '~> 4.0.0'
