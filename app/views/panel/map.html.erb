@@ -1,18 +1,33 @@
-<div id="panel" data-controller="panel">
+<div id="panel" data-controller="panel popups">
   <div class="map" data-panel-target="map"></div>
 
   <div class="panel-top-right-options">
-    <button type="button" class="panel-top-right-options-icon" title="Mis puntos de interés">
+    <button type="button" class="btn btn-secondary rounded-circle" title="Mis puntos de interés">
       <i class="fas fa-user"></i>
     </button>
-    <button type="button" class="panel-top-right-options-icon" title="Registrar punto de interés">
-      <i class="fas fa-map-marked-alt"></i>
-    </button>
+    <%= link_to new_poi_path, class: "btn btn-secondary rounded-circle ml-2",
+          remote: true,
+          title: "Registrar punto de interés",
+          data: {
+            closest_target: ".panel-top-right-options",
+            popup_title: "Registrar Punto de Interés",
+            controller_target: "Pois",
+            action: "
+              click->popups#showModule
+              ajax:beforeSend->popups#loadingPopupMain
+              ajax:success->popups#showContentPopupMain
+              ajax:success->pois#initGeomanControls
+            "
+          } do %>
+        <i class="fas fa-plus"></i>
+      <% end %>
   </div>
 
   <div class="panel-bottom-right-options">
-    <button type="button" class="panel-top-right-options-icon" title="Mostrar ubicación actual" data-action="panel#getLocation panel#focusLastPositionMarker" data-marker-focus="true">
+    <button type="button" class="panel-options-icon" title="Mostrar ubicación actual" data-action="panel#getLocation panel#focusLastPositionMarker" data-marker-focus="true">
       <i class="fas fa-location-arrow"></i>
     </button>
   </div>
+
+  <div class="panel-popup" data-popups-target="panelPopup"></div>
 </div>

@@ -38,4 +38,11 @@
     return Math.random().toString(36).substring(2, length + 2)
   }
 
+  Helper.getLoadingHTML = function(element) {
+    return `
+      <div class="d-flex align-items-center justify-content-center pt-4">
+        <h4>Esperate pe perro</h4>
+      </div>
+    `
+  }
 }).call(this);
