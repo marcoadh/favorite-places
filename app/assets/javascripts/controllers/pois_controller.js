@@ -13,9 +13,7 @@
     }
 
     showPoiForm(e) {
-      console.log(this);
       this.currentPoi = this.getCurrentPoi()
-      console.log(this.currentPoi);
       if (this.currentPoi.id) {
         this.connectPoiEvents(this.currentPoi)
       } else {
@@ -43,10 +41,6 @@
       this.removePoiLayer(this.currentPoi)
 
       this.currentPoi = null
-    }
-    
-    queonda() {
-      console.log(this);
     }
 
     onDragEnd(e) {

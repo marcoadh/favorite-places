@@ -18,7 +18,6 @@
 //= require bootstrap
 //= require vendor
 //= require_self
-//= require_tree ./libs
 //= require_tree ./scripts
 //= require_tree ./controllers
 
