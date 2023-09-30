@@ -1,0 +1,10 @@
+<% if obj.errors.any? %>
+  <div class="alert alert-danger" role="alert">
+    <h6 class="font-weight-bold "><%= I18n.t("errors.template.header", count: obj.errors.count, model: obj.class.model_name.human) %></h6>
+    <ul class="px-3">
+      <% obj.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

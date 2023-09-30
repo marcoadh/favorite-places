@@ -1,7 +1,17 @@
 es:
   activerecord:
     models:
+      poi: Punto de Interés
     attributes:
+      poi:
+        title: Título
+        description: Descripción
+        color: Color
+        score: Puntaje
+        latitude: Latitud
+        longitude: Longitud
+        category: Categoría
+        user: Usuario
     enums:
   date:
     abbr_day_names:

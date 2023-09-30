@@ -1,9 +1,48 @@
-<div data-controller="pois">
+<div>
   <div class="popup-header">
-    <h6 class="font-weight-bold mb-0">Registro de Punto de Interés</h6>
-    <button type="button" class="btn btn-secondary btn-sm rounded-circle btn-close ml-auto" data-action="click->popups#closePopup click->pois#cancelPoiForm">
+    <h6 class="font-weight-bold mb-0">Registrar Punto de Interés</h6>
+    <button type="button" class="btn btn-secondary btn-sm rounded-circle btn-close ml-auto"
+      data-action="
+        click->popups#showPanelOptions
+        click->popups#closePopup
+        click->pois#cancelPoiForm
+      "
+      data-link-target="#new-poi">
       <i class="fa fa-times"></i>
     </button>
   </div>
-  <div class="popup-main"></div>
+  <div class="popup-main p-3">
+    <%= form_with(model: @poi, remote: true, id: "poi-form", data: { poi: @poi.to_json, action: "
+      ajax:error->popups#showContentPopupMain
+    " }) do |form| %>
+      <%= render "shared/errors", obj: @poi %>
+      <div class="row">
+        <div class="form-group col-12 mb-3">
+          <%= form.label :title %>
+          <%= form.text_field :title, class: "form-control form-control-sm", required: true %>
+        </div>
+        <div class="form-group col-12 mb-3">
+          <%= form.label :description %>
+          <%= form.text_field :description, class: "form-control form-control-sm ", required: true %>
+        </div>
+        <div class="form-group col-6 mb-3">
+          <%= form.label :color %>
+          <%= form.text_field :color, class: "form-control form-control-sm color-picker-input", required: true %>
+        </div>
+        <div class="form-group col-6 mb-3">
+          <%= form.label :score %>
+          <%= form.text_field :score, class: "form-control form-control-sm ", required: true %>
+        </div>
+        <div class="form-group col-6 mb-3">
+          <%= form.label :latitude %>
+          <%= form.text_field :latitude, class: "form-control form-control-sm ", required: true, readonly: true %>
+        </div>
+        <div class="form-group col-6 mb-3">
+          <%= form.label :longitude %>
+          <%= form.text_field :longitude, class: "form-control form-control-sm ", required: true, readonly: true %>
+        </div>
+      </div>
+      <%= form.submit class: "btn btn-primary btn-sm" %>
+    <% end %>
+  </div>
 </div>
