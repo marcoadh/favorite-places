@@ -1,4 +1,10 @@
 class PoisController < ApplicationController
+  def index
+    @pois = Poi.all
+
+    render json: { pois: @pois }
+  end
+
   def new
     @poi = Poi.new(color: "#3388ff", icon: "taxi")
     render partial: "pois/form"

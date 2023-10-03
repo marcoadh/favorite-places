@@ -6,10 +6,43 @@
 
     connect() {
       App.Pois = this
+      this.load()
     }
 
     disconnect() {
       App.Pois = null
+    }
+
+    load() {
+      $.ajax({
+        type: "GET",
+        url: this.element.getAttribute("data-pois-url")
+      }).done((response) => {
+        this.destroyData()
+        this.mappingData(response)
+        this.renderLayers()
+        // this.renderPois()
+        // this.renderPoiGroups()
+      })
+    }
+
+    destroyData() {
+      this.pois ||= []
+
+      this.pois.forEach(poi => {
+        App.panel.map.removeLayer(poi.layer)
+        delete poi.layer
+      })
+    }
+
+    mappingData(data) {
+      this.pois = data.pois
+    }
+
+    renderLayers() {
+      this.pois.forEach(poi => {
+        poi.layer ||= this.createPoiMarker(poi).addTo(App.panel.map)
+      })
     }
 
     showPoiForm(e) {
@@ -34,6 +67,7 @@
 
     successPoiForm(e) {
       this.cancelPoiForm(e)
+      this.load()
     }
 
     cancelPoiForm(e) {

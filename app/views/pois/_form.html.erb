@@ -12,11 +12,16 @@
     </button>
   </div>
   <div class="popup-main p-3">
-    <%= form_with(model: @poi, remote: true, id: "poi-form", data: { poi: @poi.to_json, action: "
-      ajax:success->pois#successPoiForm
-      ajax:success->popups#closePopup
-      ajax:error->popups#showContentPopupMain
-    " }) do |form| %>
+    <%= form_with(model: @poi, remote: true, id: "poi-form", data: {
+      poi: @poi.to_json,
+      action: "
+        ajax:success->pois#successPoiForm
+        ajax:success->popups#showPanelOptions
+        ajax:success->popups#closePopup
+        ajax:error->popups#showContentPopupMain
+      ",
+      link_target: @poi.new_record? ? "#new-poi" : ""
+    }) do |form| %>
       <%= render "shared/errors", obj: @poi %>
       <div class="row">
         <div class="form-group col-12 mb-3">

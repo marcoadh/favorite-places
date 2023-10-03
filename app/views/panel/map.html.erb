@@ -1,4 +1,8 @@
-<div id="panel" data-controller="panel popups pois" data-marker-location-icon-url="<%= asset_path('icons/marker-location.png') %>">
+<div id="panel"
+    data-controller="panel popups pois"
+    data-pois-url="<%= pois_path %>"
+    data-marker-location-icon-url="<%= asset_path('icons/marker-location.png') %>"
+>
   <div class="map" data-panel-target="map"></div>
 
   <div class="panel-top-right-options">
@@ -37,5 +41,6 @@
       <%= image_tag("icons/current-location.svg", size: 40) %>
     </button>
   </div>
+
   <div class="panel-popup" data-popups-target="panelPopup"></div>
 </div>
