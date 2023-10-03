@@ -1,4 +1,5 @@
 class PoisController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index]
   def index
     @pois = Poi.all
 
