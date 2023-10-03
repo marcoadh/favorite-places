@@ -32,6 +32,10 @@
       poi.layer.dragging.enable()
     }
 
+    successPoiForm(e) {
+      this.cancelPoiForm(e)
+    }
+
     cancelPoiForm(e) {
       if (!this.currentPoi) {
         return

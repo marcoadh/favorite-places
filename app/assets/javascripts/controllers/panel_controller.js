@@ -40,13 +40,13 @@
     renderMarkerLastPosition() {
       if (!this.userLastLocation) return
 
-      const customIcon = new L.DivIcon({
-        className: "",
-        html: `<img alt="" src="${this.element.getAttribute("data-marker-location-icon-url")}" />`
-      })
+      // const customIcon = new L.DivIcon({
+      //   className: "",
+      //   html: `<img alt="" src="${this.element.getAttribute("data-marker-location-icon-url")}" />`
+      // })
 
       const latlngs = [this.userLastLocation.lat, this.userLastLocation.lng]
-      this.layerMarkerLastPosition ||= L.marker(latlngs, { icon: customIcon }).addTo(this.map)
+      this.layerMarkerLastPosition ||= L.marker(latlngs).addTo(this.map)
       this.layerMarkerLastPosition.setLatLng(latlngs)
     }
 
